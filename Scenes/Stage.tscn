@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" path="res://Scripts/Stage.cs" id="1_u0uen"]
 [ext_resource type="PackedScene" uid="uid://dqbbpk2spliwu" path="res://Scenes/HUD.tscn" id="2_csun6"]
-[ext_resource type="FontFile" uid="uid://xpf5o4fh43cp" path="res://Assets/Stage/StarJediHollow-A4lL.ttf" id="3_epguq"]
 [ext_resource type="Script" path="res://Scripts/CameraController.cs" id="3_ghfci"]
 [ext_resource type="Texture2D" uid="uid://ciefn6wk3o7vy" path="res://Assets/Stage/undefined-Imgur-ezgif.com-gif-to-sprite-converter.png" id="4_k5mcb"]
 [ext_resource type="FontFile" uid="uid://bnr3daevodt7n" path="res://Assets/Stage/The Impostor.ttf" id="5_28p47"]
@@ -57,10 +56,10 @@ tracks/1/path = NodePath("ColorRect:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.266667, 0.666667, 0.833333),
+"times": PackedFloat32Array(0, 0.266667, 0.6, 0.833333),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.431373), Color(1, 1, 1, 0.431373), Color(1, 1, 1, 0)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -352,10 +351,10 @@ tracks/0/path = NodePath("Label:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.16667),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.433333, 0.566667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(1180, 129), Vector2(-1600, 129)]
+"values": [Vector2(1289, 329), Vector2(384, 329), Vector2(384, 329), Vector2(-508, 329)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -368,6 +367,154 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ColorRect2:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.433333, 0.6, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.337255), Color(1, 1, 1, 0.337255), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ColorRect2:color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0.411765, 0.952941, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_sscxw"]
+resource_name = "TimeUp"
+length = 1.66667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.533333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(374, 222), Vector2(374, 329)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label3:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label3:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.533333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Label3:size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(575, 165)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Label3:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ColorRect2:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ColorRect2:color")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.533333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.368627), Color(1, 1, 1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("ColorRect2:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.533333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.345098)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Label3:text")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Time Up"]
 }
 
 [sub_resource type="Animation" id="Animation_45qnh"]
@@ -469,12 +616,25 @@ tracks/7/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.345098)]
 }
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Label3:text")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["you win"]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8ohru"]
 _data = {
 "Fight": SubResource("Animation_7b36c"),
 "RESET": SubResource("Animation_q2x0o"),
 "ReadyTextSlide": SubResource("Animation_pjibi"),
+"TimeUp": SubResource("Animation_sscxw"),
 "Victory": SubResource("Animation_45qnh")
 }
 
@@ -654,13 +814,17 @@ layer = -1
 [node name="HUD" parent="CanvasLayer" instance=ExtResource("2_csun6")]
 
 [node name="Label" type="Label" parent="CanvasLayer"]
-offset_left = 1250.0
-offset_top = 279.0
-offset_right = 1473.0
-offset_bottom = 355.0
-scale = Vector2(7.505, 7.505)
-theme_override_fonts/font = ExtResource("3_epguq")
-theme_override_font_sizes/font_size = 47
+offset_left = -508.0
+offset_top = 329.0
+offset_right = 5.0
+offset_bottom = 467.0
+theme_override_colors/font_color = Color(0, 0.410095, 0.954881, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_fonts/font = ExtResource("5_28p47")
+theme_override_font_sizes/font_size = 100
 text = "READY?"
 horizontal_alignment = 1
 
@@ -671,7 +835,7 @@ offset_left = 2.0
 offset_top = 328.0
 offset_right = 1300.31
 offset_bottom = 468.0
-color = Color(1, 0.83606, 0.526876, 0.368627)
+color = Color(0.917647, 0.0784314, 0, 1)
 
 [node name="Label2" type="Label" parent="CanvasLayer"]
 visible = false
@@ -680,7 +844,7 @@ offset_left = 384.0
 offset_top = 329.0
 offset_right = 894.0
 offset_bottom = 494.0
-theme_override_colors/font_color = Color(0.886343, 0.651146, 0, 1)
+theme_override_colors/font_color = Color(0.917175, 0.0769967, 1.15514e-06, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_y = 5
@@ -691,9 +855,9 @@ text = "FIGHT"
 
 [node name="Label3" type="Label" parent="CanvasLayer"]
 visible = false
-offset_left = 384.0
+offset_left = 374.0
 offset_top = 329.0
-offset_right = 959.0
+offset_right = 949.0
 offset_bottom = 494.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
@@ -702,7 +866,7 @@ theme_override_constants/shadow_offset_y = 5
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("5_28p47")
 theme_override_font_sizes/font_size = 100
-text = "you win"
+text = "Time Up"
 
 [node name="ColorRect2" type="ColorRect" parent="CanvasLayer"]
 visible = false

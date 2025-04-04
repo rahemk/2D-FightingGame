@@ -9,7 +9,7 @@ public partial class Player : CharacterBody2D
     [Export] public float JumpForce = -1000f;
     [Export] public float Gravity = 1900f;
     [Export] public int PlayerID = 1;
-    [Export] public int MaxHealth = 100;
+    [Export] public int MaxHealth = 80;
     [Export] public Texture2D PortraitTexture;
 
     // === STATE ===
@@ -74,7 +74,7 @@ public partial class Player : CharacterBody2D
     }
 
     public override void _PhysicsProcess(double delta)
-    {
+    {   
         if (_state == PlayerState.KO) return;
 
         ApplyGravity();
@@ -247,7 +247,7 @@ public partial class Player : CharacterBody2D
         }
     }
 
-    private void PerformAttack(string attackType)
+    public void PerformAttack(string attackType)
     {
         _state = PlayerState.Attacking;
         Velocity = Vector2.Zero;
@@ -267,7 +267,6 @@ public partial class Player : CharacterBody2D
 
     public void SpawnHadouken()
     {
-        GD.Print($"{PlayerName} is spawning Hadouken!");
         if (hadoukenScene == null) return;
 
         Hadouken hadouken = (Hadouken)hadoukenScene.Instantiate();
@@ -281,7 +280,7 @@ public partial class Player : CharacterBody2D
     private void PerformShoryuken()
     {
         _state = PlayerState.Attacking;
-        Velocity = new Vector2(0, JumpForce * 0.4f);
+        Velocity = new Vector2(0, JumpForce * 0.7f);
         _anim.Play("Shoryuken");
         soundManager?.PlayShoryu();
         _attackCooldown.Start(0.7f);
@@ -299,11 +298,18 @@ public partial class Player : CharacterBody2D
 
     private void TriggerKO()
     {
+        Vector2 knockback = new Vector2();
+        if (opponent != null)
+        {
+            knockback.X = (Position.X < opponent.Position.X) ? -400 : 400;
+        }
+        knockback.Y = -400;
+        Velocity = knockback;
         canMove = false;
         _state = PlayerState.KO;
         if (_anim.HasAnimation("ko")) _anim.Play("ko");
         if (opponent != null) opponent.canMove = false;
-        Engine.TimeScale = 0.5f;
+        Engine.TimeScale = 0.6f;
     }
 
     public void PlayBlockReaction()
@@ -392,6 +398,11 @@ public partial class Player : CharacterBody2D
     {
         bool holdingBack = (_isFacingRight && Input.IsActionPressed(moveLeft)) || (!_isFacingRight && Input.IsActionPressed(moveRight));
         return holdingBack;
+    }
+
+    public bool FacingRight
+    {
+        get { return _isFacingRight; }
     }
 
     public bool IsCrouching() => Input.IsActionPressed(down);

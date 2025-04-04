@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crl0pvg81ogxf"
-path="res://.godot/imported/P1_Blanka.png-255d296cf2a51d76668ccb05fbe2fb07.ctex"
+uid="uid://dwxhvbemcspbm"
+path="res://.godot/imported/7.png-f75d0e4b97c07ac1634102d46c0f60fa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/HUD-Elements/Names/P1_Blanka.png"
-dest_files=["res://.godot/imported/P1_Blanka.png-255d296cf2a51d76668ccb05fbe2fb07.ctex"]
+source_file="res://Assets/Honda/ko/7.png"
+dest_files=["res://.godot/imported/7.png-f75d0e4b97c07ac1634102d46c0f60fa.ctex"]
 
 [params]
 

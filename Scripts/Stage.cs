@@ -105,16 +105,25 @@ public partial class Stage : Node2D
             AnimPlayer.Play("Fight");
         }
 
-        if (animationName == "Victory")
+        if (animationName == "Victory" || animationName == "TimeUp")
         {
             Global global = GetNode<Global>("/root/Global");
             global.ResetCharacterSelection();
             var transition = (SceneTransistion)GetNode("/root/Transition");
             await transition.TransitionToScene("res://main.tscn");
         }
+
     }
     private void OnVictoryAnimationFinished(Player winner)
     {
         AnimPlayer.Play("Victory");
+    }
+    public void OnTimeUp()
+    {
+        player1.canMove = false;
+        player2.canMove = false;
+
+        if (AnimPlayer.HasAnimation("TimeUp"))
+            AnimPlayer.Play("TimeUp");
     }
 }

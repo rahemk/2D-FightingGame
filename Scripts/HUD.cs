@@ -39,6 +39,8 @@ public partial class HUD : Control
         if (totalTime == 0)
         {
             timer.Stop();
+            Stage stage = GetTree().Root.FindChild("Stage", true, false) as Stage;
+            if (stage != null) stage.OnTimeUp();
         }
     }
     private void UpdateTimerDisplay()

@@ -6,7 +6,6 @@ public partial class CameraController : Camera2D
     [Export] public float CameraSpeed = 5.0f; 
     [Export] public float MinX = 0f;         
     [Export] public float MaxX = 1300f;   
-
     private Player player1;
     private Player player2;
     public override void _Process(double delta)
